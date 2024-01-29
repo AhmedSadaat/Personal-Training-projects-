@@ -1,0 +1,55 @@
+def main():
+    time = input('What time is it (HH:MM am/pm)? ')
+    if time.count(' ') != 1 or time.count(':') != 1:
+        print("Invalid input! The valid format is -> HH:MM am/pm")
+        return
+
+    time1, period = time.split(" ")
+    time2 = convert(time1, period)
+    if time2 == 1:
+        return
+    if period not in ['am', 'pm']:
+        print('Please enter time in 12 hour format a.k.a am/pm')
+        return
+
+    if period == 'am' and time2 < 12:
+
+        if 6 <= time2 <= 8:
+            print("breakfast time")
+        elif time2 < 6:
+            print("Breakfast coming soon :)")
+        elif time2 > 8:
+            print("You missed the breakfast, but worry not, soon lunch wil be ready :)")
+
+    elif period == 'pm':
+
+        if 12 <= time2 <= 14:
+            print('lunch time')
+        elif 14 <= time2 <= 18:
+           print("Dinner upcoming before long! :)")
+        elif 18 <= time2 <= 21:
+            print('dinner time')
+
+    else:
+        print("All three meals are done, now plz wait till the next breakfast :(")
+
+
+def convert(time, period):
+    if not time.isdigit():
+        print('Please enter time in positive integers')
+        return 1
+
+    hrs, mins = map(int, time.split(":"))
+    if hrs > 12:
+       print("Please Type time < 12")
+       return 1
+
+    if period == 'pm' and hrs != 12:
+        hrs += 12
+    mins /= 60
+    time1 = mins + hrs
+
+    return time1
+
+if __name__ == "__main__":
+    main()
