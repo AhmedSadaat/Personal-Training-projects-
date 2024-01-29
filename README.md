@@ -1,1 +1,1 @@
-Nothing Crazy just a Simple meal teller written in python which prompts you for a question asking for a time and after you type in an appropriate time it tells you a suitable meal for that time and if it's not time for a meal it tells you which meal will be avalible after some time.
+Nothing Crazy just a Simple meal teller written in python which prompts you for a question asking for a time and after you type in an appropriate time it tells you a suitable meal for that time and if it's not time for a meal it tells you which meal will be available after some time.
